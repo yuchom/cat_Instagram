@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<!-- saved from url=(0045)http://127.0.0.1:5500/css/ex20Instagram.html# -->
+<html lang="en"><script id="youtube-hd-fjdmkanbdloodhegphphhklnjfngoffa">var ythdlog = () => {};;var ythderror = () => {};</script><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @font-face {
+            font-family: 'yg-jalnan';
+            src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_four@1.2/JalnanOTF00.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        /* 기본 스타일 */
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: yg-jalnan;
+            background-color:  #f3dbdb21;
+            height: 100%;
+            width: 100%;
+        }
+
+        /* 헤더 영역 */
+        #header {
+            display: flex;
+            background-color: #fff;
+            padding: 10px 20px;
+            /* 요소의 그림자를 추가하는 속성 
+            첫번째 값 (x-offset) : 그림자의 수평 이동 거리
+            두번째 값 (y-offset) : 그림자의 수직 이동 거리
+            세번째 값 (blur-radius) : 그림자의 흐릿함 정도
+            네번째 값 (색상) : 그림자의 색상과 투명도
+            */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        #header>a {
+            color: #333;
+            text-decoration: none;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        /* 피드 영역 */
+        #feed {
+            display: flex;
+            /* 요소가 한 줄에 다 들어가지 않을 경우 다음 줄로 넘어감 */
+            flex-wrap: wrap;
+            /* 요소들 사이에 공간 확보 */
+            gap: 20px;
+            padding: 20px;
+            justify-content: center;
+        }
+
+        /* 피드 카드 스타일 */
+        .post {
+            width: 300px;
+            background-color: #f9f9f9;
+            border-radius: 10px;
+            /* 요소의 크기를 벗어난 컨텐츠를 화면에 보이지 않도록 숨김 */
+            overflow: hidden;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .post>img {
+            width: 100%;
+            height: 300px;
+            /* 미디어 파일이 부모 요소의 크기와 비율에 맞게 조정
+                비율은 유지한 채로 요소를 완전히 채우도록 설정
+            */
+            object-fit: cover;
+            border-radius: 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .post>.content {
+            font-size: 16px;
+            padding: 0px 10px;
+        }
+
+        .post>.content>h3 {
+            margin-bottom: 10px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .post>.content>p {
+            margin-bottom: 15px;
+            font-size: 14px;
+            color: #555;
+        }
+
+        .post>.content>.like {
+            font-size: 16px;
+            color: #e1306c;
+            /* 요소위에 마우스 커서를 올릴때 모양을 변경하는 속성 */
+            cursor: pointer;
+        
+        }
+
+          
+
+
+
+        /* 마우스 오버 효과 */
+        .post:hover {
+            /* 마우스를 올렸을 때 요소를 변형 
+                원래 크기에서 1.05배 증가 -> 5%
+            */
+            transform: scale(1.05);
+            /* transform : 애니메이션 효과를 적용할 속성(대상)
+                0.3 : 애니메이션이 실행되는 시간
+                ease-in-out : 애니메이션이 시작되고 끝나는 속도를 조절하는 함수
+             */
+            transition: transform 0.3s ease-in-out;
+            /*  transition 속성은 css 속성의 값이 변경될 때
+                해당 변경을 부드럽게 에니메이션 효과를 나타내는데 사용
+                ex) hover, focus, active
+            */
+            background-color: #fff5f6;
+            color: #e24646;
+        }
+
+        /* 사이드바 */
+        #sidebar {
+            position: fixed;
+            right: 20px;
+            top: 80px;
+            width: 90px;
+            background-color: #fff;
+            padding: 15px 10px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+
+        #sidebar>a {
+            display: block;
+            margin-bottom: 10px;
+            font-size: 17px;
+            color: #333;
+            text-decoration: none;
+            /* 텍스트의 정렬을 수평으로 중앙배치 */
+            text-align: center;
+        }
+
+
+        #sidebar>a:hover {
+            color: #e1306c;
+        }
+
+        /* 푸터 영역 */
+        #footer {
+            background-color: #fff;
+            text-align: center;
+            padding: 10px;
+            margin-top: 20px;
+            font-size: 14px;
+            color: #888;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 헤더 영역 -->
+    <div id="header">
+        <a href="http://127.0.0.1:5500/css/ex20Instagram.html#"> instagram</a>
+        <a href="http://127.0.0.1:5500/css/ex20Instagram.html#"> 게시물</a>
+    </div>
+    <!-- 피드영역 -->
+    <div id="feed">
+        <!-- 포스트 1 -->
+        <div class="post">
+            <img src="./Document_files/saved_resource" alt="포스트이미지">
+            <div class="content">
+                <h3>답장냥이</h3>
+                <p>답장을 기다리는 냥이 🤍🤍</p>
+                <span class="like">❤ 좋아요 </span>
+            </div>
+        </div>
+        <!-- 포스트 2 -->
+        <div class="post">
+            <img src="./Document_files/saved_resource(1)" alt="포스트이미지">
+            <div class="content">
+                <h3>삐짐냥이</h3>
+                <p>개삐짐</p>
+                <span class="like">❤ 좋아요 </span>
+            </div>
+        </div>
+        <!-- 포스트 3 -->
+        <div class="post">
+            <img src="./Document_files/saved_resource(2)" alt="포스트이미지">
+            <div class="content">
+                <h3>우웨웨ㅔ웨ㅔㅔ어ㅔ에옹</h3>
+                <p>우웨에ㅔㅔㅔㅔ에에에에에에에에옹</p>
+                <span class="like">❤ 좋아요 </span>
+            </div>
+        </div>
+        <!-- 포스트 4 -->
+        <div class="post">
+            <img src="./Document_files/saved_resource(3)" alt="포스트이미지">
+            <div class="content">
+                <h3>호텔 캘리리포니아!</h3>
+                <p>켈레포니아 호텔은 역사와 전통을 자랑하는 호텔입니다</p>
+                <span class="like">❤ 좋아요 </span>
+            </div>
+        </div>
+        <!-- 포스트 5 -->
+        <div class="post">
+            <img src="./Document_files/saved_resource(4)" alt="포스트이미지">
+            <div class="content">
+                <h3>메롱냥이</h3>
+                <p>메롱</p>
+                <span class="like">❤ 좋아요 </span>
+            </div>
+        </div>
+        <!-- 포스트 6 -->
+        <div class="post">
+            <img src="./Document_files/f9in35p5660ce423x290.jpg" alt="포스트이미지">
+            <div class="content">
+                <h3>퇴근냥</h3>
+                <p>집에 가고 싶다냥</p>
+                <span class="like">❤ 좋아요 </span>
+            </div>
+        </div>
+        <!-- 포스트 7 -->
+        <div class="post">
+            <img src="./Document_files/images" alt="포스트이미지">
+            <div class="content">
+                <h3>당신은 행운의 고양이를 목격했습니다</h3>
+                <p>당신의 하루는 행복할 것입니다!</p>
+                <span class="like">❤ 좋아요 </span>
+            </div>
+        </div>
+        <!-- 포스트 8 -->
+        <div class="post">
+            <img src="./Document_files/images(1)" alt="포스트이미지">
+            <div class="content">
+                <h3>뭐?</h3>
+                <p>출근 시간이라고?</p>
+                <span class="like">❤ 좋아요 </span>
+            </div>
+        </div>
+        <!-- 포스트 9 -->
+        <div class="post">
+            <img src="./Document_files/img.jpg" alt="포스트이미지">
+            <div class="content">
+                <h3>힝</h3>
+                <p>이불밖은 위험해</p>
+                <span class="like">❤ 좋아요 </span>
+            </div>
+        </div>
+        <!-- 포스트 10 -->
+        <div class="post">
+            <img src="./Document_files/images(2)" alt="포스트이미지">
+            <div class="content">
+                <h3>언니 나 이뻐?</h3>
+                <p>고데기 잘 됐어?</p>
+                <span class="like">❤ 좋아요 </span>
+            </div>
+        </div>
+
+    </div>
+
+
+    <!-- 사이드바 영역 -->
+    <div id="sidebar">
+        <a href="http://127.0.0.1:5500/css/ex20Instagram.html#">메뉴</a>
+        <a href="http://127.0.0.1:5500/css/ex20Instagram.html#">로그인</a>
+        <a href="http://127.0.0.1:5500/css/ex20Instagram.html#">회원가입</a>
+        <a href="http://127.0.0.1:5500/css/ex20Instagram.html#">로그아웃</a>
+    </div>
+
+
+    <!-- 푸터 영역 -->
+    <div id="footer">© 2024 Instagram Clone. All rights reserved.</div>
+<!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+
+
+<span class="glasp-extension" style="display: block; width: 320px; margin: unset; padding: unset; border: unset; border-radius: unset; outline: unset; background-color: unset; box-shadow: unset; position: fixed; top: 40px; right: 24px; z-index: 9999;"><template shadowrootmode="open"><div class="glasp-extension" style="font-family: Inter;"></div></template></span><div class="glasp-extension" style="display: block; width: unset; margin: unset; padding: unset; border: unset; border-radius: unset; outline: unset; background-color: unset; box-shadow: unset; position: fixed; bottom: 16px; right: 16px; z-index: 9999;"><template shadowrootmode="open"><div class="glasp-extension" style="font-family: Inter;"></div></template></div></body></html>
